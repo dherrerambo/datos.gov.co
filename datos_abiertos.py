@@ -30,7 +30,7 @@ def get_metadata(type:str=None):
     metadata = pd.DataFrame(meta)
     metadata['getdata_datetime'] = datetime.datetime.now()
     if type!=None:
-        metadata = metadata[metadata['type']=='dataset'].reset_index(drop=True)
+        metadata = metadata[metadata['type']==type].reset_index(drop=True)
     return metadata
 
 
