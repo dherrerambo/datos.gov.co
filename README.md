@@ -9,5 +9,5 @@ pip install sodapy
 
 El inventario se obtiene en forma de Dataframe, asi:
 ~~~python
-inventario = get_metadata(type='dataset') 
+inventory = get_inventory()  # dict: {id: metadata}
 ~~~
