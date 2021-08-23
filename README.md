@@ -3,20 +3,17 @@ Consumir datos abiertos de www.datos.gov.co
 How to consume wwww.datos.gov.co
 
 # uso/usage
-Se debe instalar la librería [sodapy](https://github.com/xmunoz/sodapy)
-Must install [sodapy](https://github.com/xmunoz/sodapy)
+Se debe instalar la librería [sodapy](https://github.com/xmunoz/sodapy) / Must install [sodapy](https://github.com/xmunoz/sodapy)
 ~~~python
 pip install sodapy
 ~~~
 
-El inventario se obtiene en forma de Diccionario, asi:
-To fetch inventory as dictionary:
+El inventario se obtiene en forma de Diccionario, asi: / To fetch inventory as dictionary:
 ~~~python
 inventory = get_inventory()  # dict: {id: metadata}
 ~~~
 
-Para convertir en DataFrame podemos usar:
-Make inventory as DataFrame:
+Para convertir en DataFrame podemos usar: / Make inventory as DataFrame:
 ~~~python
 import pandas as pd
 from datos_abiertos import get_inventory
@@ -24,10 +21,11 @@ from datos_abiertos import get_inventory
 i_datos = get_inventory()
 df_i = pd.DataFrame.from_dict(i_datos, orient='index')
 df_i.head()
+
+df_i['type'].value_counts() # to see what's available
 ~~~
 
-Para obtener una tabla:
-To get a report:
+Para obtener una tabla: / To get a report:
 ~~~python
 from sodapy import Socrata
 
